@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.lanqiao.entity.Course" table="t_course">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"></column>
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name"></column>
+        </property>
+<!--
+    name 实体类对应的集合属性名
+    table 中间表名
+    key 外键
+    many-to-many 与集合泛型的实体类对应
+    column 属性与中间表的外键字段名对应-->
+        <set name="accounts" table="account_course">
+            <key column="cid"></key>
+            <many-to-many class="cn.lanqiao.entity.Account" column="aid">
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

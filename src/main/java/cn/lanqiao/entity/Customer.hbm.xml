@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+    many-to-one 配置实体类对应的对象属性
+    name 属性名
+    class 属性对应的类
+    column 外键-->
+<hibernate-mapping>
+    <class name="cn.lanqiao.entity.Customer" table="customer">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"></column>
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name"></column>
+        </property>
+        <set name="orders" table="orders">
+<!--            这是外键-->
+            <key column="cid"></key>
+<!--            这是类 就是订单类-->
+            <one-to-many class="cn.lanqiao.entity.Orders"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
