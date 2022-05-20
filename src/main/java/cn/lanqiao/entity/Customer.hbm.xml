@@ -17,10 +17,14 @@
             <column name="name"></column>
         </property>
         <set name="orders" table="orders">
-<!--            这是外键-->
             <key column="cid"></key>
-<!--            这是类 就是订单类-->
             <one-to-many class="cn.lanqiao.entity.Orders"></one-to-many>
         </set>
+<!--        <set name="orders" table="orders">-->
+<!--&lt;!&ndash;            这是外键&ndash;&gt;-->
+<!--            <key column="cid"></key>-->
+<!--&lt;!&ndash;            这是类 就是订单类&ndash;&gt;-->
+<!--            <one-to-many class="cn.lanqiao.entity.Orders"></one-to-many>-->
+<!--        </set>-->
     </class>
 </hibernate-mapping>

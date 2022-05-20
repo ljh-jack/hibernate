@@ -35,7 +35,7 @@
         <mapping resource="cn/lanqiao/entity/People.hbm.xml"></mapping>
         <mapping resource="cn/lanqiao/entity/Customer.hbm.xml"></mapping>
         <mapping resource="cn/lanqiao/entity/Orders.hbm.xml"></mapping>
-        <mapping resource="cn/lanqiao/entity/Account.hbm.xml"></mapping>
+        <mapping resource="cn/lanqiao/entity/Account.hbm.xml"/>
         <mapping resource="cn/lanqiao/entity/Course.hbm.xml"></mapping>
 
 
