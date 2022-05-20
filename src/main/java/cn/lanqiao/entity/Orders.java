@@ -1,6 +1,8 @@
 package cn.lanqiao.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author ljh
@@ -9,8 +11,8 @@ import lombok.Data;
  *
  * 数据库中⼀的⼀⽅是主表，多的⼀⽅时候从表，通过主外键关系来维护
  */
-
-@Data
+@Getter
+@Setter
 public class Orders {
     private Integer id;
     private String name;

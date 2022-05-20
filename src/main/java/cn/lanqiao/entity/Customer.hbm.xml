@@ -16,7 +16,7 @@
         <property name="name" type="java.lang.String">
             <column name="name"></column>
         </property>
-        <set name="orders" table="orders">
+        <set name="orders" table="orders" lazy="extra">
             <key column="cid"></key>
             <one-to-many class="cn.lanqiao.entity.Orders"></one-to-many>
         </set>

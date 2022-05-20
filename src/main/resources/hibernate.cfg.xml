@@ -2,23 +2,24 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!--配置全局环境-->
 <hibernate-configuration>
     <session-factory>
-        <!-- 配置数据库连接信息 -->
+        <!-- 配置数据库连接信息  也就是数据源 -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://127.0.0.1:3306/db1?useUnicode=true&amp;characterEncoding=UTF-8</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
-        <!-- C3P0 -->
+        <!-- C3P0  连接池的信息-->
         <property name="hibernate.c3p0.acquire_increment">10</property>
         <property name="hibernate.c3p0.idle_test_period">10000</property>
         <property name="hibernate.c3p0.timeout">5000</property>
         <property name="hibernate.c3p0.max_size">30</property>
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_statements">10</property>
-        <!-- 数据库方言 -->
+        <!-- 数据库方言   就是使用的哪一个数据库-->
         <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-        <!-- 在控制台输出sql语句 -->
+        <!-- 在控制台输出sql语句  -->
         <property name="show_sql">true</property>
         <!-- 格式化sql语句 -->
         <property name="format_sql">true</property>
@@ -26,12 +27,12 @@
         <!-- 数据库方言：指数据库按照那种数据库语法规则生成。 hibernate.hbm2ddl.auto：数据库生成策略 #hibernate.hbm2ddl.auto
             create-drop：系统启东时先创建数据库，系统退出时删除数据库 #hibernate.hbm2ddl.auto create：系统启动时先删除原有数据库，再创建新的数据库
             #hibernate.hbm2ddl.auto update：首先检测数据库是否存在，不存在则创建数据库，存在执行操作。 #hibernate.hbm2ddl.auto
-            validate：验证表结构，不会创建表 -->
+            validate：验证表结构，不会创建表  判断数据库是否存在 动态的创建表-->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!--  <property name="hibernate.current_session_context_class">thread</property> -->
 <!--        <mapping class="cn.lanqiao.entity.Customer"></mapping>-->
 <!--        <mapping class="cn.lanqiao.entity.Orders"></mapping>-->
-        <!-- 注册实体关系映射⽂件 -->
+        <!-- 注册实体关系映射⽂件   也就是映射的xml位置-->
         <mapping resource="cn/lanqiao/entity/People.hbm.xml"></mapping>
         <mapping resource="cn/lanqiao/entity/Customer.hbm.xml"></mapping>
         <mapping resource="cn/lanqiao/entity/Orders.hbm.xml"></mapping>
